@@ -23,13 +23,6 @@ class _GamePageState extends State<GamePage> {
     _confettiController = ConfettiController(
       duration: const Duration(seconds: 3),
     );
-    _audioPlayer.setVolume(0);
-    _audioPlayer.play(AssetSource('sounds/win.wav')).then((_) {
-      _audioPlayer.play(AssetSource('sounds/fail.wav')).then((_) {
-        _audioPlayer.stop();
-        _audioPlayer.setVolume(1);
-      });
-    });
   }
 
   @override
@@ -64,8 +57,6 @@ class _GamePageState extends State<GamePage> {
   }
 
   void _onSubmitGuess(String guess) {
-    print(_game.hiddenWord);
-
     if (_game.didWin || _game.didLose) {
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
