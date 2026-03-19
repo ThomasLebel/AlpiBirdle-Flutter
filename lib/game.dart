@@ -1,49 +1,15 @@
 import 'dart:collection';
 import 'dart:math';
 
-const List<String> allLegalGuesses = [...legalWords, ...legalGuesses];
+import 'package:birdle/constants/words.dart';
+
 const defaultNumGuesses = 6;
 
 enum HitType { none, hit, partial, miss, removed }
 
 typedef Letter = ({String char, HitType type});
 
-const legalWords = <String>[
-  "arbre",
-  "chien",
-  "pomme",
-  "table",
-  "soleil",
-  "livre",
-  "nuage",
-  "fleur",
-  "plage",
-  "sucre",
-  "verre",
-  "porte",
-  "route",
-  "herbe",
-  "noire",
-  "blanc",
-  "rouge",
-  "froid",
-  "chaud",
-  "neige",
-];
-
-/// Legal guesses minus legal wordles
-const legalGuesses = <String>[
-  "aback",
-  "abase",
-  "abate",
-  "abbey",
-  "abbot",
-  "abhor",
-  "abide",
-  "abled",
-  "abode",
-  "abort",
-];
+const legalWords = words;
 
 /// This class holds game state for a single round of Bulls and Cows,
 /// and exposes methods that a UI would need to manage the game state.
