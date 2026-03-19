@@ -30,25 +30,13 @@ class _GuessInputState extends State<GuessInput> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Padding(
-          padding: const EdgeInsets.all(8),
-          child: IconButton(
-            iconSize: 48,
-            onPressed: () {
-              widget.onResetGame();
-              _textEditingController.clear();
-            },
-            icon: Icon(Icons.restart_alt, color: Colors.blueGrey),
-            padding: EdgeInsets.zero,
-          ),
-        ),
         ConstrainedBox(
           constraints: BoxConstraints(maxWidth: 600),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
-                width: 250,
+                width: 225,
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: TextField(
@@ -58,6 +46,7 @@ class _GuessInputState extends State<GuessInput> {
                       isDense: true,
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.all(Radius.circular(35)),
+                        borderSide: BorderSide(color: Colors.blue),
                       ),
                     ),
                     controller: _textEditingController,
@@ -74,9 +63,20 @@ class _GuessInputState extends State<GuessInput> {
                 child: IconButton(
                   iconSize: 36,
                   onPressed: _onSubmit,
-                  icon: Icon(Icons.arrow_circle_up),
+                  icon: Icon(Icons.arrow_circle_up, color: Colors.blueGrey),
                   padding: EdgeInsets.zero,
-                  hoverColor: Colors.grey,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 24.0),
+                child: IconButton(
+                  iconSize: 36,
+                  onPressed: () {
+                    widget.onResetGame();
+                    _textEditingController.clear();
+                  },
+                  icon: Icon(Icons.restart_alt, color: Colors.blueGrey),
+                  padding: EdgeInsets.zero,
                 ),
               ),
             ],

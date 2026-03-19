@@ -38,8 +38,6 @@ const words = <String>[
   "canne",
   "carre",
   "carte",
-  "cause",
-  "chair",
   "chaud",
   "chien",
   "choix",
@@ -186,7 +184,6 @@ const words = <String>[
 
   "naive",
   "natif",
-  "naval",
   "noble",
   "noyau",
   "nuage",
